@@ -1,0 +1,26 @@
+{
+  "name": "suedom",
+  "version": "1.0.0",
+  "description": "we can do it better",
+  "main": "server.js",
+  "dependencies": {
+    "path": "^0.12.7",
+    "puppeteer": "^9.1.1",
+    "user-agents": "^1.0.657"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Contrkultya/suedom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Contrkultya/suedom/issues"
+  },
+  "homepage": "https://github.com/Contrkultya/suedom#readme"
+}
