@@ -1,0 +1,28 @@
+{
+  "name": "suedom",
+  "version": "1.0.0",
+  "description": "We can  do it better (no)",
+  "main": "sas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Contrkultya/suedom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Contrkultya/suedom/issues"
+  },
+  "homepage": "https://github.com/Contrkultya/suedom#readme",
+  "dependencies": {
+    "googleapis": "^73.0.0",
+    "ical2json": "^3.0.0",
+    "puppeteer": "^9.1.1",
+    "zombie": "^6.1.4"
+  },
+  "devDependencies": {
+    "nightmare": "^3.0.2"
+  }
+}
