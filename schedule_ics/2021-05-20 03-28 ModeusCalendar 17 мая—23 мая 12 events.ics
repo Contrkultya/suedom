@@ -1,0 +1,161 @@
+﻿BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Custis/Modeus//Schedule Calendar App//RU
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:298f6f62-7991-4d3c-b82c-4da4b27bfb0b
+SEQUENCE:0
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210521T140000
+DTEND;TZID=Asia/Yekaterinburg:20210521T153000
+SUMMARY:Информационные технологии в прикладных системах / Классификация документов (Naive Bayes Classifier) / ИТвприкладныхсистемах-ЛБ-22ИСиТ189-1
+LOCATION:УЛК-05 / 306 (УЛК-05)
+DESCRIPTION:Лабораторное занятие / Учебно-исследовательская лабораторная работа\n\nПреподаватель: Бидуля Юлия Владимировна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22298f6f62-7991-4d3c-b82c-4da4b27bfb0b%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-21T14:00:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/298f6f62-7991-4d3c-b82c-4da4b27bfb0b\n
+CATEGORIES:Лабораторное занятие
+CATEGORIES:ИТ в прикладных системах
+END:VEVENT
+BEGIN:VEVENT
+UID:4094ae0b-5ca5-4706-ab6d-71aab3b10101
+SEQUENCE:2
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210518T205000
+DTEND;TZID=Asia/Yekaterinburg:20210518T222000
+SUMMARY:Безопасность жизнедеятельности / 10- я неделя. Раздел «Помощь при неотложных состояниях» / БЖД-Л-22ИСиТ18
+LOCATION:ЭОИС
+DESCRIPTION:Лекционное занятие / Информационная лекция\n\nПреподаватели: Петров Владимир Владимирович\, Тимофеева Ирина Александровна\, Федорова Надежда Константиновна\, Кичикова Дарья Владимировна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%224094ae0b-5ca5-4706-ab6d-71aab3b10101%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-18T20:50:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/4094ae0b-5ca5-4706-ab6d-71aab3b10101\n
+CATEGORIES:Лекционное занятие
+CATEGORIES:БЖД
+END:VEVENT
+BEGIN:VEVENT
+UID:4c900839-02bf-420f-8794-3592f2649162
+SEQUENCE:1
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210522T101500
+DTEND;TZID=Asia/Yekaterinburg:20210522T114500
+SUMMARY:Основы предпринимательской деятельности / Бизнес-планирование в сфере малого предпринимательства / ОПД-П-22ИСиТ18
+LOCATION:УЛК-05 / 302 (УЛК-05)
+DESCRIPTION:Практическое занятие / Семинар\n\nПреподаватель: Фокеева Юлия Вячеславовна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%224c900839-02bf-420f-8794-3592f2649162%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-22T10:15:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/4c900839-02bf-420f-8794-3592f2649162\n
+CATEGORIES:Практическое занятие
+CATEGORIES:ОПД
+END:VEVENT
+BEGIN:VEVENT
+UID:50adf3e5-c951-4810-8b2a-492a8ad0f841
+SEQUENCE:2
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210517T140000
+DTEND;TZID=Asia/Yekaterinburg:20210517T153000
+SUMMARY:Физическая культура и спорт: теория и методика  / Обучение технике вида спорта / ФКиС:ТИМ-П-22ИСиТ18
+LOCATION:ЦЗВС — ул. Барнаульская\,41
+DESCRIPTION:Практическое занятие / Тренинг\n\nПреподаватели: Апарин Сергей Иннокентьевич\, Аксёнов Николай Евгеньевич\, Питулин Артём Владимирович\, Богацкой Алексей Дмитриевич\, Тихомирова Насима Шавкатовна\, Соловьева Евгения Витальевна\, Дорохин Геннадий Анатольевич\, Якель Светлана Валерьевна\, Подоляк Андрей Васильевич\, Соловьев Сергей Викторович\, Литвин Сергей Валерьевич\, Ерженин Владимир Сергеевич\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%2250adf3e5-c951-4810-8b2a-492a8ad0f841%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-17T14:00:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/50adf3e5-c951-4810-8b2a-492a8ad0f841\n
+CATEGORIES:Практическое занятие
+CATEGORIES:ФКиС: ТИМ
+END:VEVENT
+BEGIN:VEVENT
+UID:5badfb24-b333-435a-ba88-e1b65c3a0321
+SEQUENCE:0
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210522T120000
+DTEND;TZID=Asia/Yekaterinburg:20210522T153000
+SUMMARY:Проектный практикум / Проектирование программных классов. Часть 2 / Проектныйпрактикум-ЛБ-22ИСиТ189-1
+LOCATION:УЛК-05 / 306 (УЛК-05)
+DESCRIPTION:Лабораторное занятие / Учебно-исследовательская лабораторная работа\n\nПреподаватель: Кабардинский Евгений Олегович\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%225badfb24-b333-435a-ba88-e1b65c3a0321%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-22T12:00:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/5badfb24-b333-435a-ba88-e1b65c3a0321\n
+CATEGORIES:Лабораторное занятие
+CATEGORIES:Проектный практикум
+END:VEVENT
+BEGIN:VEVENT
+UID:738756a4-8372-48ca-af04-c9c8f23c0bab
+SEQUENCE:2
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210517T154500
+DTEND;TZID=Asia/Yekaterinburg:20210517T171500
+SUMMARY:Физическая культура и спорт: учебно-тренировочные занятия  / Обучение технике вида спорта / ФКиС:УТЗ-П-22ИСиТ18
+LOCATION:ЦЗВС — ул. Барнаульская\,41
+DESCRIPTION:Практическое занятие / Тренинг\n\nПреподаватели: Тихомирова Насима Шавкатовна\, Богацкой Алексей Дмитриевич\, Соловьева Евгения Витальевна\, Питулин Артём Владимирович\, Литвин Сергей Валерьевич\, Дорохин Геннадий Анатольевич\, Соловьев Сергей Викторович\, Аксёнов Николай Евгеньевич\, Апарин Сергей Иннокентьевич\, Подоляк Андрей Васильевич\, Якель Светлана Валерьевна\, Ерженин Владимир Сергеевич\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22738756a4-8372-48ca-af04-c9c8f23c0bab%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-17T15:45:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/738756a4-8372-48ca-af04-c9c8f23c0bab\n
+CATEGORIES:Практическое занятие
+CATEGORIES:ФКиС: УТЗ
+END:VEVENT
+BEGIN:VEVENT
+UID:7fee4008-d698-4211-a973-c34ea5d0fcb1
+SEQUENCE:1
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210517T173000
+DTEND;TZID=Asia/Yekaterinburg:20210517T204000
+SUMMARY:Практикум по разработке ИТ-решений / Программная реализация / ПРИТР2-ЛБ-22ИСиТ189-1
+LOCATION:УЛК-05 / 404 (УЛК-05)
+DESCRIPTION:Лабораторное занятие / Репродуктивная лабораторная работа\n\nПреподаватель: Хмелев Евгений Радомирович\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%227fee4008-d698-4211-a973-c34ea5d0fcb1%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-17T17:30:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/7fee4008-d698-4211-a973-c34ea5d0fcb1\n
+CATEGORIES:Лабораторное занятие
+CATEGORIES:ПРИТР 2
+END:VEVENT
+BEGIN:VEVENT
+UID:9c7e7cb3-beff-4a2e-9eb4-2c479c33ef77
+SEQUENCE:19
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210519T120000
+DTEND;TZID=Asia/Yekaterinburg:20210519T133000
+SUMMARY:Системы и технологии искусственного интеллекта / Организация базы знаний / СистемыитехнологииИИ-Л-22ИСиТ18
+LOCATION:УЛК-05 / 305 (УЛК-05)
+DESCRIPTION:Лекционное занятие / Информационная лекция\n\nПреподаватель: Глухих Игорь Николаевич\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%229c7e7cb3-beff-4a2e-9eb4-2c479c33ef77%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-19T12:00:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/9c7e7cb3-beff-4a2e-9eb4-2c479c33ef77\n
+CATEGORIES:Лекционное занятие
+CATEGORIES:Системы и технологии ИИ
+END:VEVENT
+BEGIN:VEVENT
+UID:afe0863d-93ec-42c0-bf0f-6428e4718d51
+SEQUENCE:0
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210521T154500
+DTEND;TZID=Asia/Yekaterinburg:20210521T171500
+SUMMARY:Информационные технологии в прикладных системах / Классификация документов (Rocchio Classifier) / ИТвприкладныхсистемах-ЛБ-22ИСиТ189-1
+LOCATION:УЛК-05 / 306 (УЛК-05)
+DESCRIPTION:Лабораторное занятие / Учебно-исследовательская лабораторная работа\n\nПреподаватель: Бидуля Юлия Владимировна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22afe0863d-93ec-42c0-bf0f-6428e4718d51%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-21T15:45:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/afe0863d-93ec-42c0-bf0f-6428e4718d51\n
+CATEGORIES:Лабораторное занятие
+CATEGORIES:ИТ в прикладных системах
+END:VEVENT
+BEGIN:VEVENT
+UID:b47affd9-373c-49c2-9814-98e8d18bc66e
+SEQUENCE:1
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210522T083000
+DTEND;TZID=Asia/Yekaterinburg:20210522T100000
+SUMMARY:Основы предпринимательской деятельности / Бизнес-планирование в сфере малого предпринимательства.  / ОПД-Л-22ИСиТ18
+LOCATION:УЛК-05 / 302 (УЛК-05)
+DESCRIPTION:Лекционное занятие / Лекция с составлением опорных схем\n\nПреподаватель: Фокеева Юлия Вячеславовна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22b47affd9-373c-49c2-9814-98e8d18bc66e%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-22T08:30:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/b47affd9-373c-49c2-9814-98e8d18bc66e\n
+CATEGORIES:Лекционное занятие
+CATEGORIES:ОПД
+END:VEVENT
+BEGIN:VEVENT
+UID:d43f2b72-d097-470b-8bc9-c1908fc49b29
+SEQUENCE:0
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210521T173000
+DTEND;TZID=Asia/Yekaterinburg:20210521T190000
+SUMMARY:Системы и технологии искусственного интеллекта / Система распознавания образов / СистемыитехнологииИИ-ЛБ-22ИСиТ189-1
+LOCATION:УЛК-05 / 306 (УЛК-05)
+DESCRIPTION:Лабораторное занятие / Учебно-исследовательская лабораторная работа\n\nПреподаватель: Бидуля Юлия Владимировна\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22d43f2b72-d097-470b-8bc9-c1908fc49b29%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-21T17:30:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/d43f2b72-d097-470b-8bc9-c1908fc49b29\n
+CATEGORIES:Лабораторное занятие
+CATEGORIES:Системы и технологии ИИ
+END:VEVENT
+BEGIN:VEVENT
+UID:e58c59fd-9a7e-4005-9acb-f4b9d34680f5
+SEQUENCE:1
+ORGANIZER;CN=Modeus:MAILTO:help@modeus.org
+DTSTAMP;TZID=Asia/Yekaterinburg:20210519T222845
+DTSTART;TZID=Asia/Yekaterinburg:20210521T120000
+DTEND;TZID=Asia/Yekaterinburg:20210521T133000
+SUMMARY:Системы автоматизации технологических процессов / Виды автоматизированных систем управления / САТП1-Л-22ИСиТ18
+LOCATION:УЛК-05 / 402 (УЛК-05)
+DESCRIPTION:Лекционное занятие / Информационная лекция\n\nПреподаватель: Самойлов Михаил Юрьевич\n\nПосмотреть в полной версии: https://utmn.modeus.org/schedule-calendar/my?selectedEvent=%7B%22eventId%22:%22e58c59fd-9a7e-4005-9acb-f4b9d34680f5%22%7D&calendar=%7B%22view%22:%22agendaWeek%22\,%22date%22:%222021-05-21T12:00:00.000Z%22%7D\nПосмотреть в мобильной версии: https://m-utmn.modeus.org/#/event/e58c59fd-9a7e-4005-9acb-f4b9d34680f5\n
+CATEGORIES:Лекционное занятие
+CATEGORIES:САТП 1
+END:VEVENT
+END:VCALENDAR
