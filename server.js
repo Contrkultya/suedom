@@ -1,11 +1,18 @@
 const puppeteer = require('puppeteer');
 const userAgent = require('user-agents');
 const path = require('path');
+const importer = require('./importer.js')
+const fs = require('fs');
 
 const STARTURL = 'https://utmn.modeus.org';
 const LOGIN = "";
 const PASSWORD = "";
-const DOWNLOAD_PATH = "./downloads";
+const DOWNLOAD_PATH = "./schedule_ics";
+
+let dirCont = fs.readdirSync( './schedule_ics' );
+let files = dirCont.filter( function( elm ) {return elm.match(/.*\.(ics)/ig);});
+
+fs.unlinkSync(files[0]);
 
 async function modeusParser(startURL, login, password, downloadFolder) {
     const browser = await puppeteer.launch({headless: false, defaultViewport: null,});
@@ -38,3 +45,5 @@ async function modeusParser(startURL, login, password, downloadFolder) {
 };
 
 modeusParser(STARTURL, LOGIN, PASSWORD, DOWNLOAD_PATH);
+
+importer.importModeusToGoogle();

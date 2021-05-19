@@ -4,6 +4,8 @@
   "description": "we can do it better",
   "main": "server.js",
   "dependencies": {
+    "googleapis": "^73.0.0",
+    "ical2json": "^3.0.0",
     "path": "^0.12.7",
     "puppeteer": "^9.1.1",
     "user-agents": "^1.0.657"
