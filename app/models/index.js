@@ -39,11 +39,18 @@ db.user.belongsToMany(db.role, {
     foreignKey: "user_id",
     otherKey: "roleId"
 });
-
+db.building.belongsToMany(db.assignment, {
+    through: "build_ass",
+    foreignKey: "building_id",
+    otherKey: "assignment_id"
+});
+db.assignment.belongsToMany(db.building, {
+    through: "build_ass",
+    foreignKey: "assignment_id",
+    otherKey: "building_id"
+});
 db.assignment.hasMany(db.user);
 db.user.belongsTo(db.assignment);
-db.assignment.hasMany(db.building)
-db.building.belongsTo(db.assignment)
 db.ROLES = ["user", "admin", "moderator"];
 
 module.exports = db;
