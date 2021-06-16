@@ -1,6 +1,9 @@
 const db = require("../models");
 const User = db.user;
 
+exports.updateUserTimeTable = (req, res) => {
+    
+};
 
 exports.updateSyncStatus = (req, res) => {
     User.findOne({

@@ -4,7 +4,10 @@ const cors = require("cors");
 
 const app = express();
 const db = require("./app/models");
+const bcrypt = require("bcryptjs");
 const Role = db.role;
+const User = db.user;
+const Building = db.building;
 
 var corsOptions = {
     origin: "http://localhost:8081"
@@ -23,6 +26,20 @@ function initial() {
     Role.create({
         id: 3,
         name: "admin"
+    });
+    User.create({
+        user_name: "Kosro",
+        user_fio: "Костерин Сергей Олегович",
+        user_email: "kosrobo@gmail.com",
+        user_password: bcrypt.hashSync("12345678", 8)
+    });
+    Building.create({
+       building_name: "УЛК-05",
+       building_address: "ул. Перекопская, 15а"
+    });
+    Building.create({
+        building_name: "ЦЗВС",
+        building_address: "ул. Барнаульская,41"
     });
 }
 
