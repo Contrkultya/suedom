@@ -10,14 +10,14 @@ module.exports = function(app) {
         next();
     });
 
-    app.post(
+ /*   app.get(
         "/api/sync/user",
         [authJwt.verifyToken],
         controller.syncUserTimetable
     );
-    app.post(
+    app.get(
         "/api/sync/export",
         [authJwt.verifyToken],
         controller.exportUserTimetable
-    );
+    );*/
 };
