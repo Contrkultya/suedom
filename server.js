@@ -52,13 +52,12 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-db.sequelize.sync({force: true}).then(() => {
-    console.log('Drop and Resync Db');
-    initial();
-});
+//db.sequelize.sync({force: true}).then(() => {
+  //  console.log('Drop and Resync Db');
+  //  initial();
+//});
 // for production:
-// const db = require("./app/models");
-// db.sequelize.sync();
+db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {

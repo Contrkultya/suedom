@@ -1,8 +1,25 @@
 const db = require("../models");
 const User = db.user;
+const modeusConfig = require("../config/modeus.config");
+const modeusParser = require("../utils/modeus_parser");
+const icalToDb = require("../utils/icalToDB");
 
-exports.updateUserTimeTable = (req, res) => {
-    
+exports.updateUserTimetable = (req, res) => {
+    User.findOne({
+        where: {
+            user_email: req.body.email
+        }
+    })
+        .then(async user => {
+           await modeusParser.parseModeus(modeusConfig.STARTURL, modeusConfig.LOGIN, modeusConfig.PASSWORD, modeusConfig.DOWNLOAD_PATH);
+           icalToDb.importModeusToDatabase(user.user_id);
+           return res.status(500).send({
+               message: "Successfully updated modeus timetable to dataBase"
+           })
+        })
+        .catch(err => {
+            res.status(500).send({ message: err.message });
+        });
 };
 
 exports.updateSyncStatus = (req, res) => {

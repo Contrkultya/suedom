@@ -10,11 +10,11 @@ module.exports = function(app) {
         next();
     });
 
- /*   app.post(
+   app.post(
         "/api/update/user",
         [authJwt.verifyToken],
         controller.updateUserTimetable
-    );*/
+    );
     app.post(
         "/api/update/notifications",
         [authJwt.verifyToken],

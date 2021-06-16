@@ -8,14 +8,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         user_id: {
             type: Sequelize.INTEGER,
-            unique: true
         },
         building_id: {
             type: Sequelize.INTEGER,
-            unique: true
-        },
-        assignment_date: {
-            type: Sequelize.STRING
         },
         lecturer_name: {
             type: Sequelize.STRING
@@ -32,8 +27,14 @@ module.exports = (sequelize, Sequelize) => {
         assignment_name: {
             type: Sequelize.STRING
         },
-        assignment_module: {
+        assignment_desc: {
             type: Sequelize.STRING
         },
+        assignment_start: {
+            type: Sequelize.STRING
+        },
+        assignment_end: {
+            type: Sequelize.STRING
+        }
     });
 };
