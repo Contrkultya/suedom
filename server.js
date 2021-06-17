@@ -10,7 +10,7 @@ const User = db.user;
 const Building = db.building;
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:3000"
 };
 function initial() {
     Role.create({

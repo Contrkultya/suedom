@@ -1,0 +1,147 @@
+body {
+
+}
+a{
+}
+a:hover{
+
+}
+.auth_card{
+
+}
+
+.form-control:not(active){
+
+}
+.form-control::placeholder{
+
+}
+
+.form-control:focus{
+
+}
+
+.menu{
+
+}
+th, td{
+
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+#root {
+    background-color: white;
+}
+.ico{
+    margin: 8px;
+    background: url('img/Eye.webp');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    font-family: Oxanium;
+    padding-left: 40px;
+    color: white;
+    font-size: 20pt;
+    margin-right: 100px;
+}
+a:hover {
+    color: white !important;
+}
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    margin: 2%;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid  white;
+    color:  white;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color:  #6c5b7b;
+}
+
+.paginationActive a {
+    color: white;
+    background-color:  #6c5b7b;
+}
+
+.paginationDisabled a {
+    color: white;
+    background-color: #6c5b7b;;
+}
+@font-face {
+    font-family: 'Oxanium';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/oxanium/v6/RrQPboN_4yJ0JmiMUW7sIGjd1IA9G81JfkiLD3U.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.card{
+    width: 420px !important;
+}
+.fd {
+    width: 80vw !important;
+}
+.containerMain {
+    height: 90vh !important;
+    display: flex;
+}
+.leftPanel {
+    flex: auto;
+    width: 175vw !important;
+    height: 70vh;
+}
+.rightPanel {
+    margin-left: 30px;
+    flex: auto;
+    height: 70vh;
+    width: 30vw;
+}
+.selec{
+    background-color: rgba(100, 100, 200, 0.3);
+}
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+.vh40{
+    height: 30vh !important;
+    top: -20vh !important;
+}
+.vw20{
+    min-width: 330px;
+    width: 45vw !important;
+}
+.vw55{
+    top: 0vh !important;
+    width: 55vw !important;
+    height: 35vh!important;
+}
+Chart{
+    height: 80%;
+}
+.pd15{
+ padding: 10px !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
