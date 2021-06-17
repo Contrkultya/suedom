@@ -16,6 +16,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {$host} from "../http";
 
 function Copyright() {
@@ -30,6 +31,19 @@ function Copyright() {
         </Typography>
     );
 }
+const theme = createMuiTheme({
+    overrides: {
+        // Style sheet name ⚛️
+        MuiButton: {
+            // Name of the rule
+            text: {
+                // Some CSS
+                color: 'white',
+            },
+        },
+    },
+});
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: "#03A9F4",
     },
     form: {
         width: '100%', // Fix IE 11 issue.
@@ -59,7 +73,14 @@ const useStyles = makeStyles((theme) => ({
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
+        backgroundColor: "#FFC107",
     },
+    checkbox: {
+        color: "#03A9F4",
+    },
+    grid: {
+      color: "#03A9F4",
+    }
 }));
 
 
@@ -94,7 +115,7 @@ const Auth = observer(() => {
         }
     }
 
-    const classes = useStyles();
+    const classes = useStyles(theme);
 
     const loginForm = () => {
         return <div><TextField
@@ -120,7 +141,7 @@ const Auth = observer(() => {
             autoComplete="current-password"
         />
         <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            control={<Checkbox value="remember" className={classes.checkbox} />}
             label="Remember me"
         /></div>;
 
@@ -188,19 +209,16 @@ const Auth = observer(() => {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link href="#" variant="body2">
+                                <Link href="#" variant="body2" className={classes.grid}>
                                     Forgot password?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2" onClick={()=> {setLogin(!isLogin)}}>
+                                <Link href="#" variant="body2" className={classes.grid} onClick={()=> {setLogin(!isLogin)}}>
                                     { isLogin ? "Don't have an account? Sign Up" : "Already have account"}
                                 </Link>
                             </Grid>
                         </Grid>
-                        <Box mt={5}>
-                            <Copyright />
-                        </Box>
                     </form>
                 </div>
             </Grid>

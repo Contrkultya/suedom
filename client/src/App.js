@@ -6,7 +6,7 @@ import StickyFooter from "./components/StickyFooter";
 
 const App = () => {
   return (
-      <BrowserRouter>
+    <BrowserRouter>
           <NavBar/>
         <AppRouter />
           <StickyFooter/>

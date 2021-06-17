@@ -1,17 +1,15 @@
-//import styles from '../styles.css';
 import React from "react";
 
 const style = {
-    backgroundColor: "black",
+    backgroundColor: "lightgrey",
     borderTop: "1px solid rgba(174, 174, 192, 0.4)",
     textAlign: "center",
-    padding: "15px",
     position: "fixed",
     left: "0",
     bottom: "0",
-    height: "80px",
+    height: "45px",
     width: "100%",
-    color:'white'
+    padding: "5px",
 }
 
 const phantom = {
@@ -28,13 +26,9 @@ function Footer() {
             <div style={style} >
 
                 <div className="d-flex justify-content-center container">
-                    <div style={{width:"30vw", textAlign:"start"}}> Используя систему, вы принимаете условия <a style={{color:"white"}} href={{}}>пользовательского соглашения</a></div>
-                    <div style={{width:"30vw"}}>© {new Date().getFullYear()} JTOMAT</div>
-                    <div style={{width:"30vw"}}>тел. поддержки: +7**********</div>
+                    <div style={{  textAlign:"center"}}> (C) 2021 - SUEDOM</div>
                 </div>
-
             </div>
-
         </div>
     )
 }
