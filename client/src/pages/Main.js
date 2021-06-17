@@ -10,7 +10,7 @@ import '../styles.css';
 
 
 const Main = observer(() => {
-    const {publication, mark} = useContext(Context)
+
 
     return (
         <Container

@@ -19,32 +19,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {$host} from "../http";
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-const theme = createMuiTheme({
-    overrides: {
-        // Style sheet name ⚛️
-        MuiButton: {
-            // Name of the rule
-            text: {
-                // Some CSS
-                color: 'white',
-            },
-        },
-    },
-});
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
@@ -109,13 +83,13 @@ const Auth = observer(() => {
         if (response.data.accessToken) {
             localStorage.setItem('user', response.data);
             localStorage.setItem('token', response.data.accessToken);
-            history.push('/');
+            history.push('/control');
         }else{
             alert("Can't execute function.")
         }
     }
 
-    const classes = useStyles(theme);
+    const classes = useStyles();
 
     const loginForm = () => {
         return <div><TextField

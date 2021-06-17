@@ -58,6 +58,14 @@ const NavBar = observer(() => {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(false);
     const [open, setOpen] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     if (localStorage.getItem('token') && auth == false)
         setAuth(true);
@@ -97,12 +105,6 @@ const NavBar = observer(() => {
             <AppBar position="static" style={{backgroundColor:"#03A9F4"}}>
                 <Toolbar>
                     <React.Fragment key={'left'}>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer anchor={'left'} >
-                            {list('left')}
-                        </Drawer>
                     </React.Fragment>
 
                     <Typography variant="h6" className={classes.title}>
@@ -114,6 +116,7 @@ const NavBar = observer(() => {
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 color="inherit"
+                                onClick={handleClick}
                             >
                                 <AccountCircle />
                             </IconButton>
@@ -124,11 +127,13 @@ const NavBar = observer(() => {
                                     horizontal: 'right',
                                 }}
                                 keepMounted
+                                open={Boolean(anchorEl)}
+                                anchorEl={anchorEl}
+                                onClose={handleClose}
                                 transformOrigin={{
                                     vertical: 'top',
                                     horizontal: 'right',
                                 }}
-                                open={open}
                             >
                                 <MenuItem onClick={()=>{auth ? logOut() : history.push(LOGIN_ROUTE)}}> {auth? "Exit": "Login"}</MenuItem>
                             </Menu>
