@@ -82,6 +82,7 @@ const Auth = observer(() => {
         }
         if (response.data.accessToken) {
             localStorage.setItem('user', response.data);
+            localStorage.setItem('email', response.data.email)
             localStorage.setItem('token', response.data.accessToken);
             history.push('/control');
         }else{

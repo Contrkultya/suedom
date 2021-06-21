@@ -9,12 +9,12 @@ module.exports = function(app) {
         );
         next();
     });
-
- /*   app.get(
+app.post(
         "/api/sync/user",
         [authJwt.verifyToken],
         controller.syncUserTimetable
     );
+/*
     app.get(
         "/api/sync/export",
         [authJwt.verifyToken],
