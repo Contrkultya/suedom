@@ -14,6 +14,8 @@ function importModeusToGoogle() {
     });
     const calendar = google.calendar({version: 'v3', auth: oAuth2Client});
 
+    console.log("Zd3s byl ya");
+
     let dirCont = fs.readdirSync( './schedule_ics' );
     let files = dirCont.filter( function( elm ) {return elm.match(/.*\.(ics)/ig);});
     console.log(files);
