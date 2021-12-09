@@ -14,6 +14,10 @@ app.post(
         [authJwt.verifyToken],
         controller.syncUserTimetable
     );
+app.post("/api/sync/authUrl",
+    [authJwt.verifyToken],
+    controller.getGoogleAuthUrl
+);
 /*
     app.get(
         "/api/sync/export",

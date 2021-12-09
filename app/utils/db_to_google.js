@@ -1,15 +1,16 @@
 const {getAddress, parseDate} = require('./utilFunctions');
 const {google} = require('googleapis');
 const {OAuth2} = google.auth;
+const googleConfig = require('../config/google.config.js')
 
-exports.exportDatabaseToGoogle = ( tasksList ) => {
-    const oAuth2Client = new OAuth2('');
-
-    oAuth2Client.setCredentials({
-        refresh_token:
-            ''
+exports.exportDatabaseToGoogle = ( tasksList, user ) => {
+    const oAuth2Client = new OAuth2(googleConfig.id, googleConfig.secret, googleConfig.uris[1]);
+    oAuth2Client.getToken(user.user_google_uid, (err, token) => {
+        if (err) return console.error('Error retrieving access token', err);
+        oAuth2Client.setCredentials(token);
     });
-    const calendar = google.calendar({version: 'v3', auth: oAuth2Client});
+
+    const calendar = google.calendar({version: 'v3', oAuth2Client});
 
     for (e in tasksList) {
         const event = tasksList[e];

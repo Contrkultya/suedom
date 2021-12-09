@@ -25,4 +25,6 @@ exports.importModeusToDatabase = (userId) => {
             assignment_end: "" + event['DTEND;TZID=Asia/Yekaterinburg'],
         })
     }
+    let filePath = 'C:\\Users\\kosro\\Documents\\GitHub\\suedom\\app\\utils\\ics\\' + files[0];
+    fs.unlinkSync(filePath);
 }

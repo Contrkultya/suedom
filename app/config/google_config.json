@@ -1,0 +1,14 @@
+{
+  "web": {
+    "client_id": "1191334959-nm835sfsrf3q6p32ioi62fun57majtda.apps.googleusercontent.com",
+    "project_id": "suedom",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "z4njyHKHc0mPS2IhcIMcHDHe",
+    "redirect_uris": [
+      "https://developers.google.com/oauthplayground",
+      "http://localhost:3000"
+    ]
+  }
+}

@@ -80,6 +80,15 @@ async function changeNotificationsStatus() {
     let response = await $host.post('/api/update/notifications',requestBody,req);
 
 }
+
+async function authInGoogleOrSomeShitIdk() {
+    let req = {
+        headers: {'x-access-token': localStorage.getItem('token')}
+    };
+    let requestBody = { email:  localStorage.getItem('email') };
+    let googleAPIlink = await $host.post('/api/sync/authUrl',  requestBody, req);
+    window.location.href = googleAPIlink.data.url;
+}
 const Main = observer(() => {
     const classes = useStyles();
     const [state, setState] = React.useState({
@@ -115,6 +124,10 @@ const Main = observer(() => {
         changeNotificationsStatus().then(r => {})
     };
 
+    const handleGoogleAuth = () => {
+        authInGoogleOrSomeShitIdk().then();
+    }
+
 
     return (
         <Grid container   direction="row"
@@ -130,12 +143,11 @@ const Main = observer(() => {
                         <br/>
                         <Typography variant="body2" component="p">
                             Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.
-                            Важно! В связи с тем, что приложение не прошло модерацию в гугл, потому что мне было лень нормально заполнить анкету, данная функция недоступна
                         </Typography>
                         <br/>
                     </CardContent>
                     <CardActions className={classes.check}>
-                        <Button size="small" disabled>Не доступно</Button>
+                        <Button size="small" variant={'outlined'} onClick={handleGoogleAuth}>Авторизироваться в Google</Button>
                     </CardActions>
                 </Card>
             </Grid>
