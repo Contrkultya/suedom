@@ -47,7 +47,7 @@ exports.updateGoogleToken = (req, res) => {
         })
     } else {
         User.update({
-                user_google_uid: req.body.google_token
+                user_google_uid: req.body.google_token.substring(3)
             }, {
                 where: {
                     user_email: req.body.email
