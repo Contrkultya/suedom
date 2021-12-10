@@ -1,24 +1,26 @@
-function importModeusToGoogle() {
+const googleConfig = require("../config/google.config.js");
+
+function importModeusToGoogle(user) {
     const ical2json = require("ical2json");
     const fs = require('fs');
-    const {getAddress, parseDate} = require('./utilFunctions');
+    const DOWNLOAD_PATH = "app/schedule_ics";
+    const {getAddress, parseDate} = require('../utils/utilFunctions');
 
     const {google} = require('googleapis');
     const {OAuth2} = google.auth;
 
-    const oAuth2Client = new OAuth2('dqwdqwdqwdqwddqwdqwdqwd');
+    const oAuth2Client = new OAuth2(googleConfig.id, googleConfig.secret, googleConfig.uris[1]);
 
     oAuth2Client.setCredentials({
-        refresh_token:
-            'qwdqwdqwdqwdqqwdqwdqw'
+        refresh_token: user.user_google_uid
     });
     const calendar = google.calendar({version: 'v3', auth: oAuth2Client});
 
-    let dirCont = fs.readdirSync( './schedule_ics' );
+    let dirCont = fs.readdirSync( DOWNLOAD_PATH );
     let files = dirCont.filter( function( elm ) {return elm.match(/.*\.(ics)/ig);});
     console.log(files);
 
-    let ical = fs.readFileSync(files[0], 'utf8');
+    let ical = fs.readFileSync(DOWNLOAD_PATH + '/' + files[0], 'utf8');
     let output = ical2json.convert(ical);
 
     const events = output['VEVENT'];

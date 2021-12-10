@@ -1,4 +1,4 @@
-function utilFunctions(name) {
+function getAddress(name) {
     if (name.includes('ЦЗВС')) {
         return 'Barnaul\'skaya Ulitsa, 41, Tyumen, Tyumenskaya oblast\', 625041';
     }
@@ -66,6 +66,6 @@ function parseDate(dateString) {
 }
 
 module.exports = {
-    getAddress: utilFunctions,
+    getAddress,
     parseDate
 }

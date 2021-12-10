@@ -16,6 +16,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import {$host} from "../http";
 import DialogActions from "@material-ui/core/DialogActions";
+import {Context} from "../index";
 
 
 
@@ -90,6 +91,7 @@ async function authInGoogleOrSomeShitIdk() {
     window.location.href = googleAPIlink.data.url;
 }
 const Main = observer(() => {
+    const {user} = useContext(Context)
     const classes = useStyles();
     const [state, setState] = React.useState({
         checkedA: localStorage.getItem('isSynced'),
@@ -142,12 +144,19 @@ const Main = observer(() => {
                         <br/>
                         <br/>
                         <Typography variant="body2" component="p">
-                            Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.
+                            {
+                                user.isGoogleAuth ? 'Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.':
+                                    'Синхронизация с хз каким акком работает lmao'
+                            }
                         </Typography>
                         <br/>
                     </CardContent>
                     <CardActions className={classes.check}>
-                        <Button size="small" variant={'outlined'} onClick={handleGoogleAuth}>Авторизироваться в Google</Button>
+                        <Button size="small" variant={'outlined'} onClick={handleGoogleAuth}>
+                            {
+                                user.isGoogleAuth ? 'Авторизоваться в Google' : 'Поменять аккаунт'
+                            }
+                        </Button>
                     </CardActions>
                 </Card>
             </Grid>

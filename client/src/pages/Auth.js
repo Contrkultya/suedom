@@ -72,6 +72,8 @@ const Auth = observer(() => {
                 password: document.getElementById('password').value};
         if (!isLogin) {
             requestBody.fio = document.getElementById('fio').value;
+            requestBody.year = document.getElementById('year').value;
+            requestBody.programCode = document.getElementById('program_code').value;
         }
         let response = await $host.post(`/api/auth/${ isLogin ? "signin" : "signup"}`, requestBody);
         if( !isLogin && response.data.message === "User was registered successfully!"){
@@ -84,6 +86,7 @@ const Auth = observer(() => {
             localStorage.setItem('user', response.data);
             localStorage.setItem('email', response.data.email)
             localStorage.setItem('token', response.data.accessToken);
+            localStorage.setItem('googleAuth', response.data.googleAuth);
             history.push('/control');
         }else{
             alert("Can't execute function.")
@@ -151,9 +154,29 @@ const Auth = observer(() => {
                 required
                 fullWidth
                 name="fio"
-                label="FIO"
+                label="ФИО"
                 type="text"
                 id="fio"
+            />
+            <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="program_code"
+                label="Код направления подготовки"
+                type="text"
+                id="program_code"
+            />
+            <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="year"
+                label="Год потока"
+                type="text"
+                id="year"
             />
         </div>;
 

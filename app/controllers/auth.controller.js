@@ -13,6 +13,8 @@ exports.signup = (req, res) => {
     User.create({
         user_name: req.body.name,
         user_email: req.body.email,
+        year: req.body.year,
+        program_code: req.body.programCode,
         user_password: bcrypt.hashSync(req.body.password, 8),
         user_fio: req.body.fio,
         user_notify_by_browser: false,
@@ -82,7 +84,8 @@ exports.signin = (req, res) => {
                     username: user.user_name,
                     email: user.user_email,
                     roles: authorities,
-                    accessToken: token
+                    accessToken: token,
+                    googleAuth: user.googleAuth
                 });
             });
         })

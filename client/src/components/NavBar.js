@@ -23,6 +23,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import UserStore from "../store/UserStore";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,6 +55,8 @@ const NavBar = observer(() => {
     const logOut = () => {
         localStorage.clear();
         setAuth(false);
+        user.setIsAuth(false);
+        user.setIfGoogleSync(false);
     }
     const classes = useStyles();
     const [auth, setAuth] = React.useState(false);
@@ -67,8 +70,14 @@ const NavBar = observer(() => {
         setAnchorEl(null);
     };
 
-    if (localStorage.getItem('token') && auth == false)
+    if (localStorage.getItem('token') && auth === false) {
         setAuth(true);
+        user.setIsAuth(true);
+    }
+
+    if (localStorage.getItem('googleAuth') ){
+        user.setIfGoogleSync(true);
+    }
 
     const handleChange = (event) => {
         setAuth(event.target.checked);
