@@ -10,6 +10,12 @@ module.exports = (sequelize, Sequelize) => {
         user_role_id: {
             type: Sequelize.INTEGER,
         },
+        year: {
+            type: Sequelize.STRING
+        },
+        program_code: {
+          type: Sequelize.STRING
+        },
         user_name: {
             type: Sequelize.STRING
         },
@@ -33,6 +39,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         user_google_uid: {
             type: Sequelize.STRING
-        }
+        },
     });
 };
