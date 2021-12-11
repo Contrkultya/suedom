@@ -56,13 +56,12 @@ function getAddress(name) {
 }
 
 function parseDate(dateString) {
-    const year = dateString.substring(0, 4);
+    const year = dateString.substring(0, 4) - 0;
     const month = dateString.substring(4, 6) - 1;
-    const day = dateString.substring(6, 8);
-    const hrs = dateString.substring(9, 11);
-    const mins = dateString.substring(11, 13);
-
-    return new Date(year, month, day, hrs, mins);
+    const day = dateString.substring(6, 8) - 0;
+    const hrs = dateString.substring(9, 11) - 0;
+    const mins = dateString.substring(11, 13) -0 ;
+    return new Date(Date.UTC(year, month, day, hrs, mins));
 }
 
 module.exports = {

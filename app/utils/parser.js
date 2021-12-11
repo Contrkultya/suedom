@@ -67,7 +67,7 @@ async function modeusParser (user) {
 
     await page.waitFor(5000);
 
-    importer.importModeusToGoogle(user);
+    await importer.importModeusToGoogle(user);
 
     await browser.close()
 }

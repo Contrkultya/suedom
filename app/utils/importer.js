@@ -1,6 +1,6 @@
 const googleConfig = require("../config/google.config.js");
 
-function importModeusToGoogle(user) {
+async function importModeusToGoogle(user) {
     const ical2json = require("ical2json");
     const fs = require('fs');
     const DOWNLOAD_PATH = "app/schedule_ics";
@@ -10,12 +10,10 @@ function importModeusToGoogle(user) {
     const {OAuth2} = google.auth;
 
     const oAuth2Client = new OAuth2(googleConfig.id, googleConfig.secret, googleConfig.uris[1]);
+    const {tokens} = await oAuth2Client.getToken(user.user_google_uid)
+    oAuth2Client.setCredentials(tokens);
 
-    oAuth2Client.setCredentials({
-        refresh_token: user.user_google_uid
-    });
     const calendar = google.calendar({version: 'v3', auth: oAuth2Client});
-
     let dirCont = fs.readdirSync( DOWNLOAD_PATH );
     let files = dirCont.filter( function( elm ) {return elm.match(/.*\.(ics)/ig);});
     console.log(files);
