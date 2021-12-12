@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
 import {useHistory} from "react-router-dom";
-import {LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import {CALENDAR_ROUTE, LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import "../styles.css"
 import { makeStyles } from '@material-ui/core/styles';
@@ -144,6 +144,8 @@ const NavBar = observer(() => {
                                     horizontal: 'right',
                                 }}
                             >
+                                <MenuItem onClick={()=>{auth ? history.push(CALENDAR_ROUTE) : history.push(LOGIN_ROUTE)}}> Calendar</MenuItem>
+                                <MenuItem onClick={()=>{auth ? history.push(MAIN_ROUTE) : history.push(LOGIN_ROUTE)}}> Settings</MenuItem>
                                 <MenuItem onClick={()=>{auth ? logOut() : history.push(LOGIN_ROUTE)}}> {auth? "Exit": "Login"}</MenuItem>
                             </Menu>
                         </div>
