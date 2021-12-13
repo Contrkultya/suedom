@@ -18,6 +18,9 @@ module.exports = function (app) {
         [authJwt.verifyToken],
         controller.getGoogleAuthUrl
     );
+    app.post("/api/sync/calendar",
+        [authJwt.verifyToken],
+        controller.)
     /*
         app.get(
             "/api/sync/export",

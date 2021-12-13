@@ -6,6 +6,8 @@ const {google} = require('googleapis');
 const googleExp = require("../utils/db_to_google");
 const {OAuth2} = google.auth;
 const parser = require("../utils/parser");
+const icalToDb = require("../utils/icalToDB");
+
 
 exports.syncUserTimetable = (req, res) => {
     User.findOne({
@@ -15,6 +17,7 @@ exports.syncUserTimetable = (req, res) => {
     })
         .then(async user => {
             await parser.modeusParser(user);
+            icalToDb.importModeusToDatabase(user.user_id);
         })
         .catch(err => {
             res.status(500).send({ message: err.message });
@@ -33,3 +36,22 @@ exports.getGoogleAuthUrl = (req, res) => {
     return res.status('200').send({url: authUrl});
 }
 
+exports.getCalendarView = (req, res) => {
+    User.findOne({
+        where: {
+            user_email: req.body.email
+        }
+    })
+        .then(async user => {
+            await Assignment.findAll({
+                where: {
+                    user_id : user.user_id
+                }
+            }).then(async assignments => {
+                res.status(200).send({assignments})
+            })
+        })
+        .catch(err => {
+            res.status(500).send({ message: err.message });
+        });
+}
