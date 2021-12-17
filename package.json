@@ -11,6 +11,7 @@
     "googleapis": "^73.0.0",
     "ical2json": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
+    "object-hash": "^2.2.0",
     "path": "^0.12.7",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.4",
