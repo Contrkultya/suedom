@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <available file="D:\Repos\geoserver\geoserver\src\web\app/../../../data/minimal" property="configIsAvailable"></available>
+  <fail unless="configIsAvailable" message="Unable to locate configuration: D:\Repos\geoserver\geoserver\src\web\app/../../../data/minimal"></fail>
+  <echo message="Copying data dir from D:\Repos\geoserver\geoserver\src\web\app/../../../data/minimal"></echo>
+  <copy todir="D:\Repos\geoserver\geoserver\src\web\app/src/main/webapp/data">
+    <fileset includes="**/**" dir="D:\Repos\geoserver\geoserver\src\web\app/../../../data/minimal"></fileset>
+  </copy>
+</target>
+</project>

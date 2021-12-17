@@ -1,0 +1,9 @@
+org\geoserver\web\security\ldap\LDAPAuthProviderPanelTest$1.class
+org\geoserver\web\security\ldap\LDAPUserGroupServicePanelTest$2.class
+org\geoserver\web\security\ldap\LDAPUserGroupServicePanelTest.class
+org\geoserver\web\security\ldap\LDAPUserGroupServicePanelTest$1.class
+org\geoserver\web\security\ldap\LDAPRoleServicePanelTest$2.class
+org\geoserver\web\security\ldap\LDAPRoleServicePanelTest$1.class
+org\geoserver\web\security\ldap\LDAPAuthProviderPanelTest.class
+org\geoserver\web\security\ldap\LDAPRoleServicePanelTest.class
+org\geoserver\web\security\ldap\LDAPAuthProviderPanelTest$LDAPFormTestPage.class

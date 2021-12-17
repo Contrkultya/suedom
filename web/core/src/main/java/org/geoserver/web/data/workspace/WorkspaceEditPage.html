@@ -1,0 +1,22 @@
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:head>
+    <style type="text/css">
+       #tableBody fieldset.leftwise, #tableBody fieldset.rightwise {
+         width: 40%;
+       }
+     </style>
+</wicket:head>
+<body>
+<wicket:extend>
+
+<form wicket:id="form">
+    <div wicket:id="tabs" class="tabpanel"></div>
+    <div class="button-group toolbar-sticky selfclear">
+      <a href="#" class="form-button-save" wicket:id="save"><wicket:message key="save">Save</wicket:message></a>
+      <a href="#a" class="form-button-apply" wicket:id="apply"><wicket:message key="apply">Apply</wicket:message></a>
+      <a href="#" class="form-button-cancel" wicket:id="cancel"><wicket:message key="cancel">Cancel</wicket:message></a>
+    </div>
+</form>
+</wicket:extend>
+</body>
+</html>

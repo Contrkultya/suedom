@@ -1,0 +1,3 @@
+org\geoserver\wcs\web\GeoServerWicketCoverageTestSupport.class
+org\geoserver\wcs\web\data\WCSLayerConfigTest.class
+org\geoserver\wcs\web\WCSAdminPageTest.class

@@ -1,0 +1,17 @@
+<layer>
+  <name>states</name>
+  <id>LayerInfoImpl-55228521:17d8b3c7fe0:-7f80</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-55228521:17d8b3c7fe0:-7f95</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-55228521:17d8b3c7fe0:-7f81</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-12-05 16:36:22.21 UTC</dateCreated>
+  <dateModified>2021-12-05 18:44:43.616 UTC</dateModified>
+</layer>

@@ -1,0 +1,16 @@
+org\geoserver\security\web\jdbc\JDBCConnectionPanel$2.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanel$ConnectionPanel.class
+org\geoserver\security\web\jdbc\JDBCDriverChoice$JDBCDriverRenderer.class
+org\geoserver\security\web\jdbc\JDBCRoleServicePanelInfo.class
+org\geoserver\security\web\jdbc\JDBCAuthProviderPanel$1.class
+org\geoserver\security\web\jdbc\JDBCAuthProviderPanelInfo.class
+org\geoserver\security\web\jdbc\JDBCDriverChoice.class
+org\geoserver\security\web\jdbc\JDBCUserGroupServicePanel.class
+org\geoserver\security\web\jdbc\JDBCUserGroupServicePanelInfo.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanel$1.class
+org\geoserver\security\web\jdbc\JDBCRoleServicePanel.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanel.class
+org\geoserver\security\web\jdbc\JDBCDriverChoice$JDBCDriverClassNamesModel.class
+org\geoserver\security\web\jdbc\JDBCAuthProviderPanel.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanel$JNDIConnectionPanel.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanel$BasicConnectionPanel.class

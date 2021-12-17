@@ -1,0 +1,14 @@
+org\geoserver\security\web\jdbc\role\JDBCRoleListPageTest.class
+org\geoserver\security\web\jdbc\role\JDBCConfirmRemovalRolePanelTest.class
+org\geoserver\security\web\jdbc\role\JDBCEditRolePageTest.class
+org\geoserver\security\web\jdbc\user\JDBCEditUserPageTest.class
+org\geoserver\security\web\jdbc\group\JDBCConfirmRemovalGroupPanelTest.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanelTest$1.class
+org\geoserver\security\web\jdbc\group\JDBCNewGroupPageTest.class
+org\geoserver\security\web\jdbc\user\JDBCUserListPageTest.class
+org\geoserver\security\web\jdbc\JDBCConnectionPanelTest.class
+org\geoserver\security\web\jdbc\role\JDBCNewRolePageTest.class
+org\geoserver\security\web\jdbc\user\JDBCConfirmRemovalUserPanelTest.class
+org\geoserver\security\web\jdbc\group\JDBCGroupListPageTest.class
+org\geoserver\security\web\jdbc\group\JDBCEditGroupPageTest.class
+org\geoserver\security\web\jdbc\user\JDBCNewUserPageTest.class

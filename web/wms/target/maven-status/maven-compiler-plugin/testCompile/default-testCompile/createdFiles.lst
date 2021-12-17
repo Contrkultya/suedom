@@ -1,0 +1,17 @@
+org\geoserver\wms\web\data\StyleEditPageTest$MockStyleComponentInfo.class
+org\geoserver\wms\web\data\WMSAdminPageTest.class
+org\geoserver\wms\web\publish\AttributionLayerConfigTest$1.class
+org\geoserver\wms\web\publish\AttributionLayerConfigTest.class
+org\geoserver\wms\web\data\StyleEditPageTest$MockStyleComponent.class
+org\geoserver\wms\web\data\StyleEditPageNoLayersTest.class
+org\geoserver\wms\web\data\StyleNewPageTest.class
+org\geoserver\wms\web\data\StyleEditPageTest.class
+org\geoserver\wms\web\publish\StylesModelTest.class
+org\geoserver\wms\web\data\StyleEditPageRenameTest.class
+org\geoserver\wms\web\admin\AdminPrivilegesTest.class
+org\geoserver\wms\web\data\StyleEditPageTest$StyleEditTabPanelTest.class
+org\geoserver\wms\web\data\StyleEditPageWorkspaceRenameAndEditTest.class
+org\geoserver\wms\web\data\StyleEditPageWorkspaceRenameAndEditTest$1.class
+org\geoserver\wms\web\data\publish\WMSLayerConfigTest.class
+org\geoserver\wms\web\data\StylePageSecurityTest.class
+org\geoserver\wms\web\data\StylePageTest.class
