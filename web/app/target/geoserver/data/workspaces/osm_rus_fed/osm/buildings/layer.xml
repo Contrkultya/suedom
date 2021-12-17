@@ -1,0 +1,17 @@
+<layer>
+  <name>buildings</name>
+  <id>LayerInfoImpl-55228521:17d8b3c7fe0:-7ff2</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-78ff667e:12476299803:-7ffa</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-55228521:17d8b3c7fe0:-7ff3</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-12-05 15:41:16.230 UTC</dateCreated>
+  <dateModified>2021-12-05 17:54:17.370 UTC</dateModified>
+</layer>

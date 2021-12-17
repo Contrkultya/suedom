@@ -26,6 +26,7 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
+db.week_cs = require("../models/week_cs_model.js")(sequelize, Sequelize);
 db.assignment = require("../models/assingment.model.js")(sequelize, Sequelize);
 db.building = require("../models/building.model.js")(sequelize, Sequelize);
 
@@ -50,6 +51,7 @@ db.assignment.belongsToMany(db.building, {
     otherKey: "building_id"
 });
 db.assignment.hasMany(db.user);
+db.week_cs.hasMany(db.user);
 db.user.belongsTo(db.assignment);
 db.ROLES = ["user", "admin", "moderator"];
 

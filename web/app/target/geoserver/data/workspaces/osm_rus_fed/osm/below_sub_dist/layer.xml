@@ -1,0 +1,16 @@
+<layer>
+  <name>below_sub_dist</name>
+  <id>LayerInfoImpl-55228521:17d8b3c7fe0:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-78ff667e:12476299803:-7ffa</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-55228521:17d8b3c7fe0:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-12-05 15:40:59.862 UTC</dateCreated>
+</layer>

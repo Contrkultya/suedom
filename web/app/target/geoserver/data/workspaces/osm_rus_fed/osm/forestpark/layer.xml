@@ -1,0 +1,22 @@
+<layer>
+  <name>forestpark</name>
+  <id>LayerInfoImpl-55228521:17d8b3c7fe0:-7f90</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-55228521:17d8b3c7fe0:-7f6e</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl-55228521:17d8b3c7fe0:-7f76</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-55228521:17d8b3c7fe0:-7f91</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-12-05 16:34:46.565 UTC</dateCreated>
+  <dateModified>2021-12-05 17:38:21.373 UTC</dateModified>
+</layer>
