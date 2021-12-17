@@ -1,7 +1,14 @@
 const googleConfig = require("../config/google.config.js");
+const db = require("../models");
+const {parseDate} = require("../utils/utilFunctions");
+const hash = require("object-hash");
+const week_cs = db.week_cs;
+const weekCs = db.week_cs;
+
 
 async function importModeusToGoogle(user) {
     const ical2json = require("ical2json");
+    const hash = require('object-hash');
     const fs = require('fs');
     const DOWNLOAD_PATH = "app/schedule_ics";
     const {getAddress, parseDate, getMapURL} = require('../utils/utilFunctions');
@@ -14,20 +21,69 @@ async function importModeusToGoogle(user) {
     oAuth2Client.setCredentials(tokens);
 
     const calendar = google.calendar({version: 'v3', auth: oAuth2Client});
-    let dirCont = fs.readdirSync( DOWNLOAD_PATH );
-    let files = dirCont.filter( function( elm ) {return elm.match(/.*\.(ics)/ig);});
+    let dirCont = fs.readdirSync(DOWNLOAD_PATH);
+    let files = dirCont.filter(function (elm) {
+        return elm.match(/.*\.(ics)/ig);
+    });
 
     let ical = fs.readFileSync(DOWNLOAD_PATH + '/' + files[0], 'utf8');
     let output = ical2json.convert(ical);
-
     const events = output['VEVENT'];
+    const timestamp = parseDate(events['DTSTART;TZID=Asia/Yekaterinburg'][0].getTime());
+    const week = Math.floor((timestamp + 345_600_000) / 604_800_000);
+    if (events.length === 0) {
+        return;
+    }
+    const where = {
+        user: user.id,
+        week: week
+    };
+    let changed = await weekCs.findOne(where).then((weekHash) => {
+        if (hash(weekHash.control_sum) === hash(output)) {
+            return false;
+        } else {
+            weekCs.update({
+                hash: hash(output)
+            }, where).catch(() => {
+                console.log('F');
+            })
+        }
+        return true;
+    })
+
+    if (!changed) {
+        return;
+    }
+
+    calendar.events.list({
+        calendarId: 'primary',
+        timeMin: new Date(timestamp * 1000),
+        timeMax: new Date(timestamp * 1000).getDate() + 7
+    }).then((err, res) => {
+        if (err) {
+            return console.log('F');
+        }
+        const events = res.data.items;
+        if (events.length) {
+            events.map ((e) => {
+                if (e.description.includes("Sudeom: ")) {
+                    calendar.events.delete({
+                        calendarId: 'primary',
+                        eventId: e.eventId
+                    })
+                }
+            })
+        }
+    });
+
+
 
     for (e in events) {
         const event = events[e];
         const googleEvent = {};
         const addressInfo = getAddress(event['LOCATION']);
         googleEvent.summary = event['SUMMARY'].replace(/\\n/g, '');
-        googleEvent.description = event['DESCRIPTION'].split('Посмотреть в полной версии')[0].replace(/\\n/g, ' ') + event['LOCATION'];
+        googleEvent.description = "Sudeom: " + event['DESCRIPTION'].split('Посмотреть в полной версии')[0].replace(/\\n/g, ' ') + event['LOCATION'];
         console.log(events[parseInt(e) + 1]);
         if (events[parseInt(e) + 1]) {
             const next = getAddress(event['LOCATION']);
