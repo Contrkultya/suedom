@@ -1,13 +1,22 @@
+const { filePath } = require("../config/logger.config");
+fs=require("fs");
+
 function Info(info) {
-    console.log(`[${new Date()}] [INFO] - ${info}`);
+    fs.appendFile(filePath, `[${new Date()}] [INFO] - ${info}`, function (err) {
+        if (err) throw err;
+      });
 };
 
 function Warn(info) {
-    console.log(`[${new Date()}] [WARN] - ${info}`)
+    fs.appendFile(filePath, `[${new Date()}] [WARN] - ${info}`, function (err) {
+        if (err) throw err;
+      });
 }
 
-function Error(info){
-    console.log(`[${new Date()}] [ERROR] - ${info}`)
+function Error(info) {
+    fs.appendFile(filePath, `[${new Date()}] [ERROR] - ${info}`, function (err) {
+        if (err) throw err;
+      });
 }
 
 module.exports = 
