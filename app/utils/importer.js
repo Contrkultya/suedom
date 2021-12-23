@@ -1,10 +1,10 @@
 const googleConfig = require("../config/google.config.js");
 const db = require("../models");
-const {parseDate} = require("../utils/utilFunctions");
+const {parseDate} = require("./utilFunctions");
 const hash = require("object-hash");
 const week_cs = db.week_cs;
 const weekCs = db.week_cs;
-
+const {Info, Warn, Error} = require("./Logger");
 
 async function importModeusToGoogle(user) {
     const ical2json = require("ical2json");
@@ -76,10 +76,7 @@ async function importModeusToGoogle(user) {
         }
     });
 
-
-
-    for (e in events) {
-        const event = events[e];
+    events.map(event => {
         const googleEvent = {};
         const addressInfo = getAddress(event['LOCATION']);
         googleEvent.summary = event['SUMMARY'].replace(/\\n/g, '');
@@ -107,7 +104,9 @@ async function importModeusToGoogle(user) {
                 resource: googleEvent
             }
         )
-    }
+    });
+
+    Info(`${user.id} : ${JSON.parse(events)}`);
 }
 
 module.exports = {
