@@ -21,5 +21,5 @@ export default () => {
         await $host.post('/api/sync/user', requestBody, req);
         history.push('/')
     })
-    return (<div>FUCK YOU</div>);
+    return (<div>Происходит магия. Пока она происходит, можете вернуться на главную. Сами.</div>);
 };
