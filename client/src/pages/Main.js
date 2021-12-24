@@ -17,6 +17,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import {$host} from "../http";
 import DialogActions from "@material-ui/core/DialogActions";
 import {Context} from "../index";
+import exportFromJSON from 'export-from-json'
 
 
 
@@ -130,6 +131,23 @@ const Main = observer(() => {
         authInGoogleOrSomeShitIdk().then();
     }
 
+    const exportToExcel = async () => {
+        let requestBody = {email: localStorage.getItem('email')};
+        let req = {
+            headers: {'x-access-token': localStorage.getItem('token')}
+        }
+        const response = await $host.post('/api/sync/calendar', requestBody, req);
+        const JSONCalendar = response.data.assignments;
+        const data = [];
+        for (let i in JSONCalendar) {
+            data.push(JSONCalendar[i])
+        }
+        console.log(Object.prototype.toString.call(data) === '[object Array]');
+        console.log(data);
+        const exportType = 'xls';
+        const fileName = 'suedom';
+        exportFromJSON({ data, fileName, exportType})
+    }
 
     return (
         <Grid container   direction="row"
@@ -146,7 +164,7 @@ const Main = observer(() => {
                         <Typography variant="body2" component="p">
                             {
                                 user.isGoogleAuth ? 'Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.':
-                                    'Синхронизация с хз каким акком работает lmao'
+                                    'Синхронизация работает '
                             }
                         </Typography>
                         <br/>
@@ -219,6 +237,26 @@ const Main = observer(() => {
                                 </Button>
                             </DialogActions>
                         </Dialog>
+                    </CardActions>
+                </Card>
+            </Grid>
+            <Grid item xs={6}>
+                <Card className={classes.root}>
+                    <CardContent>
+                        <Typography variant="h5" component="h2">
+                            Экспорт в Excel
+                        </Typography>
+                        <br/>
+                        <br/>
+                        <Typography variant="body2" component="p">
+                            Воспользуйтесь этой функцией, чтобы выгрузить расписание в excel
+                        </Typography>
+                        <br/>
+                    </CardContent>
+                    <CardActions className={classes.check}>
+                        <Button variant="outlined" onClick={exportToExcel}>
+                            Выгрузить
+                        </Button>
                     </CardActions>
                 </Card>
             </Grid>

@@ -20,7 +20,8 @@ module.exports = function (app) {
     );
     app.post("/api/sync/calendar",
         [authJwt.verifyToken],
-        controller.)
+        controller.getCalendarView
+    );
     /*
         app.get(
             "/api/sync/export",

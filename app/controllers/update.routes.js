@@ -70,12 +70,34 @@ exports.updateNotificationType = (req, res) => {
                     message: "Invalid notification types, must be boolean"
                 })
             } else {
-                user.user_notify_by_phone = req.body.by_phone;
-                user.user_notify_by_browser = req.body.by_browser;
+                User.update({
+                    user_notify_by_phone: req.body.by_phone,
+                    user_notify_by_browser: req.body.by_browser
+                    }, {
+                        where: {
+                            user_email: req.body.email
+                        }
+                    }
+                );
             }
-
         })
         .catch(err => {
             res.status(500).send({message: err.message});
         });
+};
+
+exports.updateAccountDetails = (req, res) => {
+        User.update({
+            year: req.body.year,
+            program_code: req.body.code,
+            user_name: req.body.newEmail,
+            user_email: req.body.newEmail,
+            user_fio: req.body.fio,
+            }, {
+                where: {
+                    user_email: req.body.email
+                }
+            }
+        );
+        return res.status(200).send({message: "update ok"})
 };

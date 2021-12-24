@@ -29,7 +29,7 @@ async function importModeusToGoogle(user) {
     let ical = fs.readFileSync(DOWNLOAD_PATH + '/' + files[0], 'utf8');
     let output = ical2json.convert(ical);
     const events = output['VEVENT'];
-    const timestamp = parseDate(events['DTSTART;TZID=Asia/Yekaterinburg'][0].getTime());
+    const timestamp = parseDate(events[0]['DTSTART;TZID=Asia/Yekaterinburg']).getTime();
     const week = Math.floor((timestamp + 345_600_000) / 604_800_000);
     if (events.length === 0) {
         return;
@@ -39,9 +39,12 @@ async function importModeusToGoogle(user) {
         week: week
     };
     let changed = await weekCs.findOne(where).then((weekHash) => {
-        if (hash(weekHash.control_sum) === hash(output)) {
-            return false;
-        } else {
+        if (weekHash != undefined) {
+            if (hash(weekHash.control_sum) === hash(output)) {
+                return false;
+            }
+        }
+        else {
             weekCs.update({
                 hash: hash(output)
             }, where).catch(() => {
@@ -55,7 +58,7 @@ async function importModeusToGoogle(user) {
         return;
     }
 
-    calendar.events.list({
+    /*calendar.events.list({
         calendarId: 'primary',
         timeMin: new Date(timestamp * 1000),
         timeMax: new Date(timestamp * 1000).getDate() + 7
@@ -74,9 +77,10 @@ async function importModeusToGoogle(user) {
                 }
             })
         }
-    });
+    });*/
 
-    events.map(event => {
+    for (e in events) {
+        const event = events[e];
         const googleEvent = {};
         const addressInfo = getAddress(event['LOCATION']);
         googleEvent.summary = event['SUMMARY'].replace(/\\n/g, '');
@@ -104,9 +108,9 @@ async function importModeusToGoogle(user) {
                 resource: googleEvent
             }
         )
-    });
+    }
 
-    Info(`${user.id} : ${JSON.parse(events)}`);
+    //Info(`${user.id} : ${JSON.parse(events)}`);
 }
 
 module.exports = {

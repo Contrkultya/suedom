@@ -30,4 +30,9 @@ module.exports = function(app) {
         [authJwt.verifyToken],
         controller.updateSyncStatus
     );
+    app.post(
+        "/api/update/account",
+        [authJwt.verifyToken],
+        controller.updateAccountDetails
+    );
 };
