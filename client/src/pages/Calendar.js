@@ -22,18 +22,16 @@ function getWindowDimensions() {
         height
     };
 }
-function prefabEvents(eventsJson) {
-    const jsonEvents = JSON.parse(eventsJson);
-    const dbEvents = jsonEvents.assignments
-    const events = [];
-    for (let e in dbEvents ) {
-        events.push({
-            title: e.assignment_name,
-            allDay: false,
-            start: e.assignment_start,
-            end: e.assignment_end
-        })
-    }
+
+function parseModeusDateToIso(dateString) {
+    return dateString.substring(0, 4) + '-' + dateString.substring(4, 6) + '-'
+    + dateString.substring(6, 8) + 'T' + dateString.substring(9, 11) + ':'
+    + dateString.substring(11, 13) + ':00' + '';
+}
+
+function parseISODateToModeus(dateString) {
+    return dateString.substring(0,4) + dateString.substring(5,7) + dateString.substring(8, 10)
+    + 'T' + dateString.substring(11, 13) + dateString.substring(14, 16) + '00'
 }
 
 export function useWindowDimensions() {
@@ -53,6 +51,8 @@ export function useWindowDimensions() {
 
 const CalendarView = observer(() => {
     const {height, width} = useWindowDimensions();
+    const [one, setOne] = React.useState(0);
+    const two = 0;
     let calendarEvents;
     const [openNewEvent, setOpenNewEvent] = React.useState(false);
     const [openEventDialog, setOpenEventDialog] = React.useState(false);
@@ -75,13 +75,30 @@ const CalendarView = observer(() => {
     ]);
 
     useEffect(async () => {
+        let calendarApi = calendarRef.current.getApi()
         let requestBody = {email: localStorage.getItem('email')};
         let req = {
             headers: {'x-access-token': localStorage.getItem('token')}
         }
         const response = await $host.post('/api/sync/calendar', requestBody, req);
-        calendarEvents = response.data.assingments;
-    });
+        const dbEvents = response.data.assignments;
+
+        for (let e in dbEvents ) {
+            const oldEvent = calendarApi.getEventById(dbEvents[e].assignment_id);
+            if (oldEvent !== null) {
+                oldEvent.remove();
+            }
+
+            calendarApi.addEvent({
+                id: dbEvents[e].assignment_id,
+                title: dbEvents[e].assignment_name,
+                start: parseModeusDateToIso(dbEvents[e].assignment_start),
+                end: parseModeusDateToIso(dbEvents[e].assignment_end)
+            })
+        }
+
+    }, [one, two]);
+
     const handleEventClick = (info) => {
         console.log(info.event);
         setEventOptions( {
@@ -103,29 +120,58 @@ const CalendarView = observer(() => {
         setOpenNewEvent(true);
     }
 
-    const handleNewEvent = function () {
+    const handleNewEvent = async function () {
         let calendarApi = calendarRef.current.getApi()
         calendarApi.addEvent({
             title: document.getElementById('newName').value,
             start: document.getElementById('newStart').value,
             end: document.getElementById('newEnd').value
         })
-        setOpenEventDialog(false)
+        let requestBody = {
+            email: localStorage.getItem('email'),
+            name: document.getElementById('newName').value,
+            start: parseISODateToModeus( document.getElementById('newStart').value),
+            end: parseISODateToModeus( document.getElementById('newEnd').value)
+        };
+        let req = {
+            headers: {'x-access-token': localStorage.getItem('token')}
+        }
+        const response = await $host.post('/api/update/add', requestBody, req);
+        setOne(one + 1);
+        setOpenNewEvent(false)
     }
 
-    const handleEventChange = function() {
+    const handleEventChange = async function() {
         let calendarApi = calendarRef.current.getApi()
         let currentEvent = calendarApi.getEventById(eventOptions.id);
         currentEvent.setProp('title', document.getElementById('changeName').value);
         currentEvent.setStart(document.getElementById('changeStart').value);
         currentEvent.setEnd(document.getElementById('changeEnd').value);
+        let requestBody = {
+            id: eventOptions.id,
+            name: document.getElementById('changeName').value,
+            start: parseISODateToModeus( document.getElementById('changeStart').value),
+            end: parseISODateToModeus( document.getElementById('changeEnd').value)
+        };
+        let req = {
+            headers: {'x-access-token': localStorage.getItem('token')}
+        }
+        const response = await $host.post('/api/update/update', requestBody, req);
         setOpenEventDialog(false);
     }
 
-    const handleEventRemove = function () {
+    const handleEventRemove = async function() {
         let calendarApi = calendarRef.current.getApi()
         let currentEvent = calendarApi.getEventById(eventOptions.id);
         currentEvent.remove();
+        let requestBody = {
+            id: eventOptions.id,
+        };
+        let req = {
+            headers: {'x-access-token': localStorage.getItem('token')}
+        }
+        const response = await $host.post('/api/update/remove', requestBody, req);
+
         setOpenEventDialog(false);
     }
 
@@ -157,7 +203,6 @@ const CalendarView = observer(() => {
                         }
                     }
                 }}
-                events={localCalendarEvents}
             />
             <Dialog open={openNewEvent} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Добавить событие</DialogTitle>

@@ -1,5 +1,6 @@
 const db = require("../models");
 const User = db.user;
+const Assignment = db.assignment
 const modeusConfig = require("../config/modeus.config");
 const modeusParser = require("../utils/modeus_parser");
 const icalToDb = require("../utils/icalToDB");
@@ -101,3 +102,44 @@ exports.updateAccountDetails = (req, res) => {
         );
         return res.status(200).send({message: "update ok"})
 };
+
+exports.addEvent = async (req, res) => {
+    User.findOne({
+        where: {
+            user_email: req.body.email
+        }
+    })
+        .then(async (user) => {
+            await Assignment.create({
+        user_id: user.user_id,
+        assignment_name: req.body.name,
+        assignment_start: req.body.start,
+        assignment_end: req.body.end,
+    })
+        });
+    return res.status(200).send({message: "update ok"})
+};
+
+exports.updateEvent = (req, res) => {
+    Assignment.update({
+           assignment_name: req.body.name,
+           assignment_start: req.body.start,
+           assignment_end: req.body.end,
+        }, {
+            where: {
+                assignment_id: req.body.id
+            }
+        }
+    );
+    return res.status(200).send({message: "update ok"})
+};
+
+exports.removeEvent = (req, res) => {
+    Assignment.destroy({
+        where: {
+            assignment_id: req.body.id
+        }
+    })
+    return res.status(200).send({message: "update ok"})
+};
+

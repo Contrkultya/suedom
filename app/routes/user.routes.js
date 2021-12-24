@@ -34,5 +34,5 @@ module.exports = function(app) {
         "/api/user/data",
         [authJwt.verifyToken],
         controller.userData
-    )
+    );
 };

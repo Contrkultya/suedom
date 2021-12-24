@@ -35,4 +35,20 @@ module.exports = function(app) {
         [authJwt.verifyToken],
         controller.updateAccountDetails
     );
+    app.post(
+        "/api/update/add",
+        [authJwt.verifyToken],
+        controller.addEvent
+    );
+    app.post(
+        "/api/update/update",
+        [authJwt.verifyToken],
+        controller.updateEvent
+    );
+    app.post(
+        "/api/update/remove",
+        [authJwt.verifyToken],
+        controller.removeEvent
+    );
+
 };
