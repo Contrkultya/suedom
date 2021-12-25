@@ -1,7 +1,0 @@
-org\geoserver\web\demo\MapPreviewPageTest.class
-org\geoserver\web\demo\PreviewLayerProviderTest.class
-org\geoserver\web\demo\DemoRequestsPageTest.class
-org\geoserver\web\demo\SRSDescriptionPageTest.class
-org\geoserver\web\demo\PreviewLayerProviderMixedModeTest.class
-org\geoserver\web\demo\ReprojectPageTest.class
-org\geoserver\web\demo\SRSListPageTest.class
