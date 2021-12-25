@@ -9,7 +9,7 @@ const Role = db.role;
 const User = db.user;
 const Building = db.building;
 
-var allowedOrigins = ["http://localhost:3000", "https://suedom.herokuapp.com/", "http://suedom.herokuapp.com/"]
+var allowedOrigins = ["http://localhost:3000", "https://suedom.herokuapp.com", "http://suedom.herokuapp.com"]
 
 function initial() {
     Role.create({
