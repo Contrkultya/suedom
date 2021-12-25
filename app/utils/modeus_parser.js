@@ -4,7 +4,9 @@ const path = require('path');
 const fs = require('fs');
 
 exports.parseModeus = async (startURL, login, password, downloadFolder) => {
-    const browser = await puppeteer.launch({headless: false, defaultViewport: null,});
+    const browser = await puppeteer.launch({args: ['--no-sandbox','--disable-setuid-sandbox'],
+        headless: false, defaultViewport: null
+    });
     const page = await browser.newPage();
     await page.setUserAgent(userAgent.toString());
     await page.setViewport({ width: 1920, height: 1080 });
