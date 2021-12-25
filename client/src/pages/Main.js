@@ -163,7 +163,7 @@ const Main = observer(() => {
                         <br/>
                         <Typography variant="body2" component="p">
                             {
-                                user.isGoogleAuth ? 'Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.':
+                                true ? 'Воспользуйтесь этой функцией, чтобы привязать Google аккаунт, с которым будет синхронизироваться расписание.':
                                     'Синхронизация работает '
                             }
                         </Typography>
@@ -172,7 +172,7 @@ const Main = observer(() => {
                     <CardActions className={classes.check}>
                         <Button size="small" variant={'outlined'} onClick={handleGoogleAuth}>
                             {
-                                user.isGoogleAuth ? 'Авторизоваться в Google' : 'Поменять аккаунт'
+                               true ? 'Авторизоваться в Google' : 'Поменять аккаунт'
                             }
                         </Button>
                     </CardActions>
