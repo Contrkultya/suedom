@@ -18,7 +18,7 @@ for (const file of files) {
 
 async function modeusParser (user) {
     const browser = await puppeteer.launch({args: ['--no-sandbox','--disable-setuid-sandbox'],
-        headless: false, defaultViewport: null
+        headless: true, defaultViewport: null
     });
     const page = await browser.newPage();
     await page.setUserAgent(userAgent.toString());
