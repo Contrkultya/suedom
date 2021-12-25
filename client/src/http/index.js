@@ -12,11 +12,11 @@ const WMS_SETTINGS = {
 
 
 const $host = axios.create({
-    baseURL: "http://localhost:8081"
+    baseURL: "http://suedom.herokuapp.com/"
 })
 
 const $authHost = axios.create({
-    baseURL: "http://localhost:8081"
+    baseURL: "http://suedom.herokuapp.com/"
 })
 
 const authInterceptor = config => {
