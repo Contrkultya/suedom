@@ -9,8 +9,10 @@ const sequelize = new Sequelize(
         host: config.HOST,
         dialect: config.dialect,
         dialectOptions: {
-            ssl: true
-        },
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }},
         ssl: true,
         operatorsAliases: false,
 
